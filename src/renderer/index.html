@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self' data:;" />
+  <title>PDF Toolkit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">PT</div>
+        <div>
+          <div class="brand-name">PDF Toolkit</div>
+          <div class="brand-sub">Pay once. Own it forever.</div>
+        </div>
+      </div>
+
+      <nav class="tools" id="toolNav">
+        <button class="tool active" data-tool="merge">
+          <span class="tool-icon">&#10697;</span>
+          <span><span class="tool-name">Merge PDFs</span><span class="tool-desc">Combine files into one</span></span>
+        </button>
+        <button class="tool" data-tool="split">
+          <span class="tool-icon">&#9986;</span>
+          <span><span class="tool-name">Split PDF</span><span class="tool-desc">Extract page ranges</span></span>
+        </button>
+        <button class="tool" data-tool="rotate">
+          <span class="tool-icon">&#8635;</span>
+          <span><span class="tool-name">Rotate Pages</span><span class="tool-desc">90&deg; / 180&deg; / 270&deg;</span></span>
+        </button>
+        <button class="tool" data-tool="watermark">
+          <span class="tool-icon">&#9640;</span>
+          <span><span class="tool-name">Watermark</span><span class="tool-desc">Text or image stamp</span></span>
+        </button>
+        <button class="tool" data-tool="images">
+          <span class="tool-icon">&#9635;</span>
+          <span><span class="tool-name">Images &rarr; PDF</span><span class="tool-desc">JPG / PNG to PDF</span></span>
+        </button>
+        <button class="tool" data-tool="metadata">
+          <span class="tool-icon">&#9998;</span>
+          <span><span class="tool-name">Metadata</span><span class="tool-desc">Edit title &amp; author</span></span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="local-badge"><span class="dot"></span> 100% local &middot; no uploads</div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <h1 id="toolTitle">Merge PDFs</h1>
+          <p id="toolSubtitle">Drop PDFs below, reorder them, then merge into a single file.</p>
+        </div>
+      </header>
+
+      <!-- Drop zone -->
+      <section class="dropzone" id="dropzone">
+        <div class="dropzone-inner">
+          <div class="dropzone-icon">&#8681;</div>
+          <div class="dropzone-title" id="dropTitle">Drag &amp; drop PDF files here</div>
+          <div class="dropzone-sub">or</div>
+          <button class="btn btn-ghost" id="browseBtn">Browse files</button>
+        </div>
+      </section>
+
+      <!-- File list -->
+      <section class="filelist-wrap" id="filelistWrap" hidden>
+        <div class="filelist-head">
+          <span id="fileCount">0 files</span>
+          <button class="btn-link" id="clearFiles">Clear all</button>
+        </div>
+        <ul class="filelist" id="filelist"></ul>
+      </section>
+
+      <!-- Tool options -->
+      <section class="options" id="options"></section>
+
+      <!-- Output + action -->
+      <section class="actionbar">
+        <div class="outdir">
+          <span class="outdir-label">Output folder</span>
+          <button class="outdir-btn" id="outdirBtn" title="Choose output folder">
+            <span id="outdirPath">&hellip;</span>
+          </button>
+        </div>
+        <button class="btn btn-primary" id="runBtn" disabled>Merge PDFs</button>
+      </section>
+
+      <!-- Progress / result -->
+      <section class="status" id="status" hidden>
+        <div class="status-row">
+          <div class="spinner" id="spinner"></div>
+          <div class="status-text" id="statusText">Working&hellip;</div>
+        </div>
+        <div class="results" id="results"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "pdf-toolkit",
+  "productName": "PDF Toolkit",
+  "version": "1.0.0",
+  "description": "Merge, split, rotate, watermark, convert and edit PDFs — 100% local, pay once, own it forever.",
+  "main": "src/main.js",
+  "author": "Ben (bensblueprints)",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/smoke.js",
+    "dist": "electron-builder --win nsis"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "co.advancedmarketing.pdftoolkit",
+    "productName": "PDF Toolkit",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
