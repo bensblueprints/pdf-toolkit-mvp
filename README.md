@@ -23,7 +23,7 @@ All processing happens **locally with [pdf-lib](https://pdf-lib.js.org/)** — p
 
 Don't want to install Node and build from source? Grab the packaged Windows installer — pay once, own it forever:
 
-**[Get PDF Toolkit on Whop →](https://whop.com/onetime-suite)**
+**[Get PDF Toolkit on Whop →](https://whop.com/benjisaiempire/pdfsmith)**
 
 ## Quick start (from source)
 
@@ -72,3 +72,7 @@ launch-kit/      # Product Hunt, ad copy, launch strategy
 ## License
 
 [MIT](LICENSE) © 2026 Ben (bensblueprints)
+
+## macOS build
+
+See [MAC-BUILD.md](MAC-BUILD.md). Quickest path: GitHub **Actions** tab -> run the **Mac Build** (`mac-build.yml`) workflow to get a downloadable `.dmg` (unsigned - right-click -> Open on first launch).
