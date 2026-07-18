@@ -1,5 +1,9 @@
 # PDF Toolkit
 
+## Demo
+
+VIDEO-PLACEHOLDER
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-8f7bff.svg)](LICENSE)
 
 **Every PDF tool you actually use — merge, split, rotate, watermark, convert, edit — running 100% on your machine. Pay once. Own it forever. No subscription.**
