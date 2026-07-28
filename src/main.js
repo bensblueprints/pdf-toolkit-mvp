@@ -1,7 +1,6 @@
 const { app, BrowserWindow, ipcMain, dialog, shell } = require('electron');
 const path = require('path');
 const ops = require('./pdf-ops');
-const { gateLicense, registerLicenseIpc } = require('./license-gate');
 
 let win = null;
 
@@ -24,9 +23,7 @@ function createWindow() {
   win.loadFile(path.join(__dirname, 'renderer', 'index.html'));
 }
 
-app.whenReady().then(async () => {
-  if (!(await gateLicense())) return; // quit already requested
-  registerLicenseIpc();
+app.whenReady().then(() => {
   createWindow();
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();

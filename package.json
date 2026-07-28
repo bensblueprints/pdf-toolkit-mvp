@@ -1,7 +1,7 @@
 {
   "name": "pdf-toolkit",
   "productName": "PDF Toolkit",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Merge, split, rotate, watermark, convert and edit PDFs — 100% local, pay once, own it forever.",
   "main": "src/main.js",
   "author": "Ben (bensblueprints)",
